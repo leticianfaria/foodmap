@@ -14,19 +14,30 @@
   <section class="intro">
     <h1 class="logo">FOODMAP</h1>
   </section>
-  <main>
-    <h1 class="logo">FOODMAP</h1>
+  <main class="content">
+    <h1 class="logo text-center">FOODMAP</h1>
+    <h2 class="text-center">Restaurantes perto de você</h2>
     <div id="map"></div>
-    <h2>Restaurantes perto de você</h2>
-    <input type="text" placeholder="Filtrar restaurantes">
-  </main>
 
+    <button value="italiana" class="italiana type">ITALIAN</button>
+    <button value="vegana" class="vegana type">VEGAN</button>
+    <button value="fast food" class="fast-food type">FAST FOOD</button>
+    <button value="arabe" class="arabe type">ARABE</button>
+    <button value="japonesa" class="japonesa type">JAPONESA</button>
+    <br>
+    <input type="text" class="input" placeholder="Pesquisar por nome">
+    <input type="button" value="Pesquisar" class="search">
+
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6KU9Lh45NjD4u49ZxVrvW2q5VNa87Zrw&callback=initMap">
+  </script>
 </body>
 
 </html>
