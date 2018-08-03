@@ -57,7 +57,6 @@ function initMap() {
     var infowindow = new google.maps.InfoWindow({
       content: i.name
     });
-    console.log(i.name)
     let marker = new google.maps.Marker({           
       position: address, 
       icon: 'assets/marker.png',

@@ -27,8 +27,11 @@
   font-family: 'Montserrat', sans-serif;
 }
 .content{
+  /* display: none; */
+  background-color: #f5f5f5;
+}
+.intro{
   display: none;
-  background-color: #f7f7f7;
 }
 .content .logo{
   background-color: #7685ab;
@@ -44,7 +47,7 @@
   padding: 3px 0;
 }
 #map {
-  height: 380px;
+  height: 350px;
   width: 100%;
  }
 .buttons{
@@ -54,11 +57,59 @@
   border: 0;
   border-radius: 50%;
   padding: 10px;
-  width: 70px
+  width: 70px;
+  background-color: #7685ab; 
 }
 .type span{
   font-size: 35px;
   margin: 0 auto;
+  color: #fff;
+}
+.input{
+  border: 2px solid #7685ab;
+  border-radius: 25px;
+  padding: 0 20px;
+  height: 40px;
+  outline: 0;
+  background-color: transparent;
+}
+.input-group{
+  padding: 0 60px;
+}
+.search{
+  border: 0;
+  background-color: transparent;
+  outline: 0;
+}
+.search-icon{
+  font-size: 35px;
+  font-weight: 700;
+  color: #7685ab; 
+}
+.restaurant{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  padding: 20px 30px;
+  margin: 15px auto;
+  box-shadow: 10px 10px 25px -5px rgba(193,193,193,1);
+}
+.restaurant h1{
+  text-transform: uppercase;
+  font-size: 32px;
+  color: #a37f70;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.restaurant p{
+  font-size: 14px;
+  color: #3a3a3a;
+}
+.restaurant strong{
+  text-transform: uppercase;
+  color: #a37f70;
+  align-self: flex-end;
 }
 @keyframes opacity {
   from {
