@@ -6,21 +6,17 @@ $(document).ready(function () {
     restaurantes.forEach((restaurante, index) => {
       $('.content').append('<div id="' + index + '" class="restaurant" data-toggle="modal" data-target="#modal' + index + '"> <h1 class="restaurant-name">' + restaurante.name + '</h1> <p>' + restaurante.description + '</p> <strong>' + restaurante.type + '</strong> </div>');
       $('#' + index).click(function() {
-        console.log(restaurante);
-        $('.content').append('<div class="modal" id="modal' + index + '" tabindex="-1" role="dialog"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title">'+ restaurante.name +'</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div> <div class="modal-body"><img src="' + restaurante.image + '" width="90%" max-height="300px"><p>' + restaurante.description + '</p> <p>' + restaurante.type +'</p> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> </div> </div> </div> </div>');
+        $('.content').append('<div class="modal" id="modal' + index + '" tabindex="-1" role="dialog"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title">'+ restaurante.name +'</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div> <div class="modal-body"><img src="' + restaurante.image + '" width="90%" max-height="300px"><p>' + restaurante.description + '</p> <strong>' + restaurante.type +'</strong> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> </div> </div> </div> </div>');
       });
     });
   }
   insert(restaurantes);
    
-
-
   $('.type').each(function () {
     $(this).on('click', function () {
       searchByType($(this).val());
     });
   })
-
 
   function searchByType(el) {
     $('strong').each(function () {

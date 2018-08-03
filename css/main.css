@@ -13,7 +13,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* display: none; */
 }
 .logo{
   letter-spacing: 5px;
@@ -27,12 +26,12 @@
   font-family: 'Montserrat', sans-serif;
 }
 .content{
-  display: none;
+  /* display: none; */
   background-color: #f5f5f5;
 }
-/* .intro{
+.intro{
   display: none;
-} */
+}
 .content .logo{
   background-color: #7685ab;
   background-image: linear-gradient(180deg, #7685ab 0%, #a37f70 100%);
@@ -110,6 +109,32 @@
   text-transform: uppercase;
   color: #a37f70;
   align-self: flex-end;
+}
+.modal{
+  font-family: 'Montserrat', sans-serif;
+}
+.modal-header{
+  text-align: center;
+  text-transform: uppercase;
+  color: #a37f70;
+}
+.modal-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 40px;
+}
+.modal-body p{
+  margin: 20px 0;
+}
+.modal-body strong{
+  text-transform: uppercase;
+  color: #7685ab;
+}
+.modal button{
+  background-color: #a37f70;
+  border: 0;
+  margin: 0 auto;
 }
 @keyframes opacity {
   from {
