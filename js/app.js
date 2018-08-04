@@ -6,7 +6,7 @@ $(document).ready(function () {
     restaurantes.forEach((restaurante, index) => {
       $('.content').append('<div id="' + index + '" class="restaurant" data-toggle="modal" data-target="#modal' + index + '"> <h1 class="restaurant-name">' + restaurante.name + '</h1> <p>' + restaurante.description + '</p> <strong>' + restaurante.type + '</strong> </div>');
       $('#' + index).click(function() {
-        $('.content').append('<div class="modal" id="modal' + index + '" tabindex="-1" role="dialog"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title">'+ restaurante.name +'</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div> <div class="modal-body"><img src="' + restaurante.image + '" width="90%" max-height="300px"><p>' + restaurante.description + '</p> <strong>' + restaurante.type +'</strong> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> </div> </div> </div> </div>');
+        $('.content').append('<div class="modal" id="modal' + index + '" tabindex="-1" role="dialog"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title">'+ restaurante.name +'</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div> <div class="modal-body"><img src="' + restaurante.image + '" width="200px" height="200px"><p>' + restaurante.description + '</p> <strong>' + restaurante.type +'</strong> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> </div> </div> </div> </div>');
       });
     });
   }
@@ -32,7 +32,7 @@ $(document).ready(function () {
     $('.restaurant-name').each(search);
   })
   function search() {
-    if ($(this).text() !== $('.input').val()) {
+    if ($(this).text().toLowerCase() !== $('.input').val().toLowerCase()){
       $(this).parent().fadeOut('slow');
     } if ($(this).text() === $('.input').val()) {
       $(this).parent().fadeIn('slow');
@@ -52,13 +52,10 @@ function initMap() {
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 15, center: {lat: 
         -23.557567, lng: -46.658615}});
-  for ( i of restaurantes ){
+  for ( let i of restaurantes ){
     let coords = [];
     coords.push(i.latitude,i.longitude)
     let address = {lat: coords[0], lng: coords[1]}
-    var infowindow = new google.maps.InfoWindow({
-      content: i.name
-    });
     let marker = new google.maps.Marker({           
       position: address, 
       icon: 'assets/marker.png',
@@ -66,6 +63,9 @@ function initMap() {
       map: map 
       });  
       marker.addListener('click', function() {
+        const infowindow = new google.maps.InfoWindow({
+          content: i.name
+        });
         infowindow.open(map, marker);
       });
   }
