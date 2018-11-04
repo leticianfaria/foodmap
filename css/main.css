@@ -46,9 +46,6 @@
   height: 350px;
   width: 100%;
  }
-.buttons{
-  padding: 10px 0;
-}
 .type{
   border: 0;
   border-radius: 50%;
@@ -64,7 +61,7 @@
 .input{
   border: 0;
   border-bottom: 1px solid #7685ab;
-  width: 60%;
+  width: 40%;
   padding: 0 20px;
   height: 40px;
   outline: 0;
@@ -141,5 +138,17 @@
   to {
     opacity: 1;
     letter-spacing: 4px;
+  }
+}
+.buttons {
+  padding: 10px 360px;
+}
+
+@media only screen and (min-device-width : 0) and (max-device-width : 560px) {
+  .buttons {
+    padding: 10px 0;
+  }
+  .input {
+    width: 60%;
   }
 }
